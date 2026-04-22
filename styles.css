@@ -1,0 +1,541 @@
+:root {
+  --brand-green: #00a829;
+  --brand-red: #d7133d;
+  --brand-gold: #e1c97c;
+  --brand-cream: #e8d391;
+  --brand-cream-soft: #f5e8b8;
+  --text-dark: #2f2116;
+  --card-bg: #fff6d9;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: var(--text-dark);
+  line-height: 1.5;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(255, 255, 255, 0.35), transparent 34%),
+    radial-gradient(circle at 86% 8%, rgba(215, 19, 61, 0.08), transparent 26%),
+    linear-gradient(180deg, var(--brand-cream-soft) 0%, var(--brand-cream) 100%);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.container {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+}
+
+.hero {
+  min-height: 66vh;
+  position: relative;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 8% 15%, rgba(0, 168, 41, 0.2), transparent 30%),
+    radial-gradient(circle at 95% 10%, rgba(215, 19, 61, 0.22), transparent 30%),
+    linear-gradient(180deg, #eddca5 0%, #e2ca83 100%);
+  z-index: -2;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      -45deg,
+      rgba(255, 255, 255, 0.05) 0,
+      rgba(255, 255, 255, 0.05) 12px,
+      transparent 12px,
+      transparent 24px
+    );
+  z-index: -1;
+}
+
+.hero__content {
+  animation: rise 700ms ease-out;
+}
+
+.brand-top {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(2.2rem, 6vw, 5.2rem);
+  letter-spacing: 0.14em;
+  color: var(--brand-green);
+  text-shadow: 1px 1px 0 #0b6a21, 3px 3px 0 rgba(255, 255, 255, 0.35);
+}
+
+h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.4rem, 6vw, 5.2rem);
+  color: var(--brand-red);
+  line-height: 1;
+  margin-bottom: 0.55rem;
+  text-shadow: 1px 1px 0 #8f0f26, 3px 3px 0 rgba(255, 255, 255, 0.3);
+}
+
+.tagline {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  margin-bottom: 1.4rem;
+  color: #4a3617;
+  font-weight: 600;
+}
+
+.btn-main {
+  display: inline-block;
+  text-decoration: none;
+  background: linear-gradient(180deg, #f2dfaa 0%, var(--brand-gold) 100%);
+  color: #3b2c0e;
+  font-weight: 700;
+  padding: 0.9rem 1.7rem;
+  border-radius: 999px;
+  box-shadow: 0 10px 22px rgba(57, 40, 8, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+  min-height: 48px;
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+
+.btn-promo {
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  background: linear-gradient(180deg, #ffe6eb 0%, #f9b4c3 100%);
+  color: #6f1230;
+  font-weight: 700;
+  padding: 0.9rem 1.45rem;
+  border-radius: 999px;
+  box-shadow: 0 10px 22px rgba(85, 18, 40, 0.18);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+  min-height: 48px;
+}
+
+.btn-promo:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.03);
+  box-shadow: 0 14px 26px rgba(85, 18, 40, 0.24);
+}
+
+.btn-main:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.03);
+  box-shadow: 0 14px 26px rgba(57, 40, 8, 0.26);
+}
+
+.menu-section {
+  padding: 3.7rem 0 4.5rem;
+  position: relative;
+}
+
+.promo-banner {
+  position: relative;
+  margin-top: -1.3rem;
+  z-index: 2;
+}
+
+.promo-banner__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  background: linear-gradient(120deg, #d7133d 0%, #ea2f5a 48%, #00a829 100%);
+  color: #fff8d8;
+  border-radius: 16px;
+  padding: 0.85rem 1.1rem;
+  box-shadow: 0 14px 24px rgba(91, 24, 20, 0.24);
+}
+
+.promo-banner__title {
+  font-weight: 800;
+  letter-spacing: 0.01em;
+}
+
+.promo-banner__status {
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  padding: 0.28rem 0.72rem;
+  border-radius: 999px;
+}
+
+.promo-banner__status.active {
+  background: rgba(255, 247, 209, 0.23);
+  border-color: rgba(255, 236, 173, 0.85);
+  animation: pulsePromo 1.6s ease-in-out infinite;
+}
+
+.menu-section::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 1.4rem;
+  height: 2px;
+  background: linear-gradient(to right, transparent, rgba(0, 168, 41, 0.5), transparent);
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.section-logo {
+  width: min(380px, 82%);
+  height: auto;
+  display: block;
+  margin: 0 auto 0.9rem;
+  filter: drop-shadow(0 12px 20px rgba(76, 52, 14, 0.28));
+}
+
+.section-title p {
+  color: var(--brand-green);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.section-title h2 {
+  font-family: "Playfair Display", serif;
+  color: var(--brand-red);
+  font-size: clamp(1.9rem, 4vw, 2.9rem);
+}
+
+.section-title small {
+  display: inline-block;
+  margin-top: 0.48rem;
+  color: #6d5321;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.25rem;
+}
+
+.dish-card {
+  background: var(--card-bg);
+  border: 2px solid rgba(0, 168, 41, 0.16);
+  border-radius: 18px;
+  padding: 1rem;
+  box-shadow: 0 12px 22px rgba(108, 61, 19, 0.13);
+  transform: translateY(18px);
+  opacity: 0;
+  animation: fadeUp 600ms ease forwards;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+.dish-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 30px rgba(108, 61, 19, 0.2);
+  border-color: rgba(215, 19, 61, 0.33);
+}
+
+.dish-card img,
+.dish-photo-placeholder {
+  width: 100%;
+  height: 170px;
+  border-radius: 12px;
+}
+
+.dish-card img {
+  object-fit: cover;
+}
+
+.dish-photo-placeholder {
+  border: 2px dashed rgba(215, 19, 61, 0.45);
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: #8d2140;
+  background: #fff1ee;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.8rem;
+}
+
+.dish-photo-placeholder small {
+  margin-top: 0.28rem;
+  display: block;
+  font-size: 0.72rem;
+  color: #b33b56;
+}
+
+.dish-card h3 {
+  color: var(--brand-red);
+  margin-top: 0.8rem;
+  font-size: 1.18rem;
+}
+
+.dish-card p {
+  font-size: 0.95rem;
+  margin-top: 0.35rem;
+  min-height: 46px;
+}
+
+.dish-card .price {
+  display: inline-block;
+  margin-top: 0.8rem;
+  font-weight: 700;
+  color: #0f6f26;
+  background: #d7f8d5;
+  border-radius: 999px;
+  padding: 0.28rem 0.74rem;
+}
+
+.site-footer {
+  background: linear-gradient(180deg, #4b3214 0%, #3f290f 100%);
+  color: #f7e7bb;
+  padding: 1.2rem 0;
+  border-top: 3px solid rgba(255, 229, 168, 0.45);
+}
+
+.site-footer .container {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.site-footer p {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.promo-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 60;
+}
+
+.promo-modal.is-open {
+  display: flex;
+}
+
+.promo-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(31, 18, 5, 0.52);
+  backdrop-filter: blur(2px);
+}
+
+.promo-modal__panel {
+  position: relative;
+  width: min(720px, 92vw);
+  background: linear-gradient(180deg, #fff8de 0%, #faedc4 100%);
+  border: 2px solid rgba(0, 168, 41, 0.3);
+  border-radius: 22px;
+  box-shadow: 0 22px 38px rgba(37, 20, 5, 0.28);
+  padding: 1.4rem 1.25rem 1.2rem;
+  text-align: center;
+}
+
+.promo-modal__close {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.7rem;
+  border: none;
+  background: #ffffff;
+  color: #6b1b32;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 8px 16px rgba(107, 27, 50, 0.2);
+}
+
+.promo-modal h3 {
+  font-family: "Playfair Display", serif;
+  color: var(--brand-red);
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+}
+
+.promo-modal__subtitle {
+  margin-top: 0.2rem;
+  color: #6b4f1a;
+  font-weight: 600;
+}
+
+.promo-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1.1rem;
+}
+
+.promo-card {
+  border-radius: 16px;
+  padding: 1rem;
+  border: 2px solid rgba(215, 19, 61, 0.22);
+  background:
+    radial-gradient(circle at 8% 8%, rgba(255, 255, 255, 0.5), transparent 35%),
+    linear-gradient(120deg, #ffe6cc 0%, #ffd8df 50%, #e7ffd9 100%);
+}
+
+.promo-card__day {
+  color: #86213f;
+  font-weight: 800;
+  font-size: 1.05rem;
+}
+
+.promo-card__deal {
+  margin-top: 0.25rem;
+  color: #0d7025;
+  font-weight: 800;
+  font-size: 2rem;
+}
+
+.confetti-layer {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.confetti-piece {
+  position: absolute;
+  top: -10%;
+  width: 9px;
+  height: 13px;
+  opacity: 0.95;
+  animation: confettiFall 1200ms linear forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulsePromo {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 241, 189, 0.16);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 0 0 10px rgba(255, 241, 189, 0);
+  }
+}
+
+@keyframes confettiFall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(120vh) rotate(640deg);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 580px) {
+  .hero {
+    min-height: 62vh;
+  }
+
+  .hero-actions {
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
+  .btn-main,
+  .btn-promo {
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  .brand-top {
+    letter-spacing: 0.1em;
+  }
+
+  .menu-grid {
+    gap: 1rem;
+  }
+
+  .menu-section {
+    padding: 3.2rem 0 4rem;
+  }
+
+  .promo-banner {
+    margin-top: -0.75rem;
+  }
+
+  .promo-banner__content {
+    justify-content: center;
+    text-align: center;
+    padding: 0.95rem 0.9rem;
+    border-radius: 14px;
+  }
+
+  .promo-banner__status {
+    font-size: 0.92rem;
+  }
+
+  .promo-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .promo-modal__panel {
+    padding: 1.2rem 0.9rem 1rem;
+    border-radius: 18px;
+  }
+
+  .promo-card__deal {
+    font-size: 1.8rem;
+  }
+
+  .dish-card img,
+  .dish-photo-placeholder {
+    height: 190px;
+  }
+
+  .site-footer .container {
+    justify-content: center;
+    text-align: center;
+    row-gap: 0.35rem;
+  }
+
+  .site-footer p {
+    justify-content: center;
+  }
+}

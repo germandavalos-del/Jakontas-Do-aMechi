@@ -1,0 +1,89 @@
+﻿<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jakontas Doña Mechi | Menú</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero__overlay"></div>
+      <div class="hero__content container">
+        <p class="brand-top">JAKONTAS</p>
+        <h1>Doña Mechi</h1>
+        <p class="tagline">Sabor casero con amor y tradición</p>
+        <div class="hero-actions">
+          <a href="#menu" class="btn-main">Ver Menú</a>
+          <button class="btn-promo" id="open-promos" type="button">Promociones</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="promo-banner" aria-live="polite">
+        <div class="container promo-banner__content">
+          <p class="promo-banner__title">
+            <span aria-hidden="true">🔥</span>
+            Promociones
+          </p>
+          <p class="promo-banner__status" id="promo-status">Cargando promoción...</p>
+        </div>
+      </section>
+
+      <section id="menu" class="menu-section container">
+        <div class="section-title">
+          <img
+            class="section-logo"
+            src="images/logo.png"
+            alt="Logo Jakontas Dona Mechi"
+            onerror="this.style.display='none'"
+          />
+          <p>Nuestro Menú</p>
+          <h2>Platos Destacados</h2>
+      
+        </div>
+
+        <div class="menu-grid" id="menu-grid"></div>
+      </section>
+    </main>
+
+    <section class="promo-modal" id="promo-modal" aria-hidden="true">
+      <div class="promo-modal__backdrop" id="promo-backdrop"></div>
+      <div class="promo-modal__panel" role="dialog" aria-modal="true" aria-labelledby="promo-title">
+        <button class="promo-modal__close" id="close-promos" type="button" aria-label="Cerrar promociones">
+          ✕
+        </button>
+        <h3 id="promo-title">Promociones Semanales</h3>
+        <p class="promo-modal__subtitle">Aprovecha nuestros días especiales</p>
+        <div class="promo-cards">
+          <article class="promo-card">
+            <p class="promo-card__day">Martes de Promoción</p>
+            <p class="promo-card__deal">2 x 1</p>
+          </article>
+          <article class="promo-card">
+            <p class="promo-card__day">Jueves Loco</p>
+            <p class="promo-card__deal">2 x 1</p>
+          </article>
+        </div>
+      </div>
+      <div class="confetti-layer" id="confetti-layer" aria-hidden="true"></div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p><span aria-hidden="true">🍽️</span> Jakontas Doña Mechi</p>
+        <p><span aria-hidden="true">📍</span> Ubicación: Mercado Yungas, Puesto #23, Sector Comedor</p>
+        <p><span aria-hidden="true">📞</span> Pedidos: +591 72526805 - 73093056</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
